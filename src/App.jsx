@@ -507,6 +507,7 @@ function RewardsContainer() {
     let values = {};
     rewards.forEach((reward) => {
       const _amt = Math.floor(reward.amount);
+      // Did not use hasOwnProperty due to performance and hOP doesn't do undefined evaluations
       // Create unique key for each month based on month/year
       values[reward.date] = (values[reward.date] == undefined) ? 0 : values[reward.date];
       // Sum up amount based on logic given 
